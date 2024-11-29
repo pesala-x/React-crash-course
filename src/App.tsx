@@ -5,13 +5,16 @@ import {itemList} from "./items.ts";
 
 function App() {
 
+    const  itemArray = []
+
+    for (const item of itemList) {
+        itemArray.push(<Item title={item.title} description={item.description} />)
+    }
+
   return (
       <>
           <ButtonComponent name = 'add'/>
-
-          <Item title={itemList[0].title} description={itemList[0].description} />
-          <Item title={itemList[1].title} description={itemList[1].description} />
-          <Item title={itemList[2].title} description={itemList[2].description} />
+          {itemArray}
       </>
   )
 }
