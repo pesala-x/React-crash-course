@@ -1,22 +1,13 @@
 import './App.css'
-import Dashboard from "./Dashboard.tsx";
-import Login  from "./Login.tsx";
+import {ButtonComponent} from "./assets/component/ButtonComponent.tsx";
 
 function App() {
 
-    const isLoggedIn = true;
-
-    let content;
-
-    if (isLoggedIn) {
-        content=<Dashboard/>
-    }else {
-        content=<Login/>
-    }
-
   return (
       <>
-          {content}
+          <ButtonComponent>Click mee 1</ButtonComponent>
+          <ButtonComponent>Click mee 2</ButtonComponent>
+          <ButtonComponent>Click mee 3</ButtonComponent>
       </>
   )
 }
