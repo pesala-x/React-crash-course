@@ -1,23 +1,10 @@
 import './App.css'
 import {ButtonComponent} from "./assets/component/ButtonComponent.tsx";
 import {Item} from "./assets/component/Item.tsx";
+import {itemList} from "./items.ts";
 
 function App() {
-    const itemList =[
-        {
-            title : "title1",
-            description: "description1",
-        },
-        {
-            title : "title2",
-            description: "description2",
-        },
 
-        {
-            title : "title3",
-            description: "description3",
-        }
-    ]
   return (
       <>
           <ButtonComponent name = 'add'/>
