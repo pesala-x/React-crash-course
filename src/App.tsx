@@ -1,20 +1,22 @@
 import './App.css'
-import {ButtonComponent} from "./assets/component/ButtonComponent.tsx";
-import {Item} from "./assets/component/Item.tsx";
-import {itemList} from "./items.ts";
+import Dashboard from "./Dashboard.tsx";
+import Login  from "./Login.tsx";
 
 function App() {
 
-    const  itemArray = []
+    const isLoggedIn = true;
 
-    for (const item of itemList) {
-        itemArray.push(<Item title={item.title} description={item.description} />)
+    let content;
+
+    if (isLoggedIn) {
+        content=<Dashboard/>
+    }else {
+        content=<Login/>
     }
 
   return (
       <>
-          <ButtonComponent name = 'add'/>
-          {itemArray}
+          {content}
       </>
   )
 }
