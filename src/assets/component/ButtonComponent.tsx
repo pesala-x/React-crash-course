@@ -1,19 +1,7 @@
-export default function ButtonComponent() {
+export function ButtonComponent(props:{name: string}) {
     return (
         <>
-            <button>click mee...</button>
-            <button>click mee...</button>
-            <button>click mee...</button>
-        </>
-    );
-}
-
-export function SmallButtonComponent() {
-    return (
-        <>
-            <button>click mee...</button>
-            <button>click mee...</button>
-            <button>click mee...</button>
+            <button>{props.name}</button>
         </>
     );
 }

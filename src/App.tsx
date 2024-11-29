@@ -1,12 +1,11 @@
 import './App.css'
-import ButtonComponent, {SmallButtonComponent} from "./assets/component/ButtonComponent.tsx";
+import {ButtonComponent} from "./assets/component/ButtonComponent.tsx";
 
 function App() {
 
   return (
       <>
-          <ButtonComponent/>
-          <SmallButtonComponent/>
+          <ButtonComponent name = 'add'/>
       </>
   )
 }
