@@ -1,14 +1,11 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
-export function ButtonComponent(props:{children:ReactNode}) {
-
-    const handleClick = () => {
-        alert("Chuttak කැව..");
-    }
-
+export function ButtonComponent(props: { children: ReactNode, onSelect: (name: string) => void }) {
     return (
         <>
-            <button onClick={handleClick}>{props.children}</button>
+            <button onClick={() => props.onSelect(String(props.children))}>
+                {props.children}
+            </button>
         </>
     );
 }
