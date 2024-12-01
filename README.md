@@ -52,7 +52,4 @@ Contributions are welcome! If you have ideas to improve this project or find iss
 If you find this repository helpful, please give it a ⭐ and share it with others.  
 For suggestions or feedback, contact me at [gkpesalawinodith@gmail.com].
 
----
-
-Happy coding! 🚀
-```
+   **Happy coding! 🚀 with Pesala-X**
