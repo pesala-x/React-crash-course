@@ -1,20 +1,28 @@
 import './App.css';
-import { useState } from "react";
-import ButtonComponent from "./assets/component/ButtonComponent";
+import {useState} from "react";
 
 function App() {
-    const [count, setCount] = useState(0);
 
-    const updateCount = (value: number) => {
-        setCount(count + value); //
-    };
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
+
+    function handleCheckFirstname(event : React.ChangeEvent<HTMLInputElement>) {
+        setFirstname(event.target.value); // Update firstname based on input
+    }
+
+    function handleCheckLastname(event: React.ChangeEvent<HTMLInputElement>) {
+        setLastname(event.target.value); // Update lastname based on input
+    }
 
     return (
         <>
-            <div style={{ textAlign: "center", marginTop: "20px" }}>
-                <h1>{count}</h1>
-                <ButtonComponent updateCount={updateCount} action="increment" />
-                <ButtonComponent updateCount={updateCount} action="decrement" />
+            <div>
+                <input type="text" name='First Name' onChange={handleCheckFirstname}/>
+                <input type="text" name='Last Name' onChange={handleCheckLastname}/>
+
+                <br/>
+
+                {firstname +" "+ lastname}
             </div>
         </>
     );
