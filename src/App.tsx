@@ -1,41 +1,67 @@
 import './App.css';
 import { useState } from "react";
+import { Customer } from "./customer";
 
 function App() {
-    const [names, setNames] = useState({
-        firstName: '',
-        lastName: ''
-    });
+    const [customers, setCustomers] = useState<Customer[]>([]);
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
+    const [mobile, setMobile] = useState("");
 
-    const [output, setOutput] = useState({
-        firstName: '',
-        lastName: ''
-    });
+    function addCustomer() {
+        if (!name || !address || !email || !mobile) {
+            alert("Please fill out all fields.");
+            return;
+        }
 
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-        const { name, value } = event.target;
-        setNames((prevState) => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
+        const newCustomer = new Customer(name, address, email, mobile);
+        setCustomers(customers => [...customers, newCustomer]);
 
-    function handleDisplayOutput() {
-        setOutput(names);
+        // Clear input fields
+        setName("");
+        setAddress("");
+        setEmail("");
+        setMobile("");
     }
 
     return (
         <>
             <div>
-                <input type="text" name="firstName" placeholder="First Name" value={names.firstName} onChange={handleInputChange} />
-                <input type="text" name="lastName" placeholder="Last Name" value={names.lastName} onChange={handleInputChange} />
-
-                <button onClick={handleDisplayOutput}>Display Output</button>
-
+                <input
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Mobile"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                />
                 <br />
-
-                <p>{output.firstName + " " + output.lastName}</p>
+                <button onClick={addCustomer}>Add Customer</button>
             </div>
+            <ul>
+                {customers.map((customer, index) => (
+                    <li key={index}>
+                        {customer.name} - {customer.address} - {customer.email} - {customer.mobile}
+                    </li>
+                ))}
+            </ul>
         </>
     );
 }
