@@ -7,7 +7,12 @@ function App() {
         lastName: ''
     });
 
-    function handleCheckName(event: React.ChangeEvent<HTMLInputElement>) {
+    const [output, setOutput] = useState({
+        firstName: '',
+        lastName: ''
+    });
+
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
         setNames((prevState) => ({
             ...prevState,
@@ -15,15 +20,21 @@ function App() {
         }));
     }
 
+    function handleDisplayOutput() {
+        setOutput(names);
+    }
+
     return (
         <>
             <div>
-                <input type="text" name="firstName" placeholder="First Name" value={names.firstName} onChange={handleCheckName} />
-                <input type="text" name="lastName" placeholder="Last Name" value={names.lastName} onChange={handleCheckName}/>
+                <input type="text" name="firstName" placeholder="First Name" value={names.firstName} onChange={handleInputChange} />
+                <input type="text" name="lastName" placeholder="Last Name" value={names.lastName} onChange={handleInputChange} />
+
+                <button onClick={handleDisplayOutput}>Display Output</button>
 
                 <br />
 
-                <p>{names.firstName + " " + names.lastName}</p>
+                <p>{output.firstName + " " + output.lastName}</p>
             </div>
         </>
     );
