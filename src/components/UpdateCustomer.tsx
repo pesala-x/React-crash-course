@@ -1,9 +1,9 @@
 import {Link} from "react-router";
 
-export function AddCustomer() {
+export function UpdateCustomer() {
     return (
-        <>Add customer
-        <br/>
+        <> UpdateCustomer
+            <br/>
             <Link to="/">GoBack</Link>
         </>
     );
