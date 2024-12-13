@@ -1,28 +1,29 @@
 import './App.css';
-import {useState} from "react";
+import { useState } from "react";
 
 function App() {
+    const [names, setNames] = useState({
+        firstName: '',
+        lastName: ''
+    });
 
-    const [firstname, setFirstname] = useState('')
-    const [lastname, setLastname] = useState('')
-
-    function handleCheckFirstname(event : React.ChangeEvent<HTMLInputElement>) {
-        setFirstname(event.target.value); // Update firstname based on input
-    }
-
-    function handleCheckLastname(event: React.ChangeEvent<HTMLInputElement>) {
-        setLastname(event.target.value); // Update lastname based on input
+    function handleCheckName(event: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target;
+        setNames((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
     }
 
     return (
         <>
             <div>
-                <input type="text" name='First Name' onChange={handleCheckFirstname}/>
-                <input type="text" name='Last Name' onChange={handleCheckLastname}/>
+                <input type="text" name="firstName" placeholder="First Name" value={names.firstName} onChange={handleCheckName} />
+                <input type="text" name="lastName" placeholder="Last Name" value={names.lastName} onChange={handleCheckName}/>
 
-                <br/>
+                <br />
 
-                {firstname +" "+ lastname}
+                <p>{names.firstName + " " + names.lastName}</p>
             </div>
         </>
     );
