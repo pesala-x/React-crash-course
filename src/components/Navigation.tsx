@@ -19,25 +19,25 @@ export function Navigation() {
                 <div className="flex space-x-6">
                     <Link
                         to="/"
-                        className="text-purple-700 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
                     >
                         Dashboard
                     </Link>
                     <Link
                         to="/add"
-                        className="text-purple-700 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
                     >
                         Add Customer
                     </Link>
                     <Link
                         to="/update"
-                        className="text-purple-700 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
                     >
                         Update Customer
                     </Link>
                     <Link
                         to="/delete"
-                        className="text-purple-700 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
                     >
                         Delete Customer
                     </Link>
@@ -47,7 +47,7 @@ export function Navigation() {
                 <div className="flex items-center space-x-4">
                     <button
                         type="button"
-                        className="relative overflow-hidden text-purple-800 hover:text-white focus:outline-none rounded-full"
+                        className="relative overflow-hidden text-purple-500 hover:text-white focus:outline-none rounded-full"
                     >
                         <IoIosNotificationsOutline
                             className="h-6 w-6"
