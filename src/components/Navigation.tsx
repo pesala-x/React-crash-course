@@ -3,7 +3,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 
 export function Navigation() {
     return (
-        <nav className="w-full text-white py-4 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-10">
+        <nav className="w-full text-white py-4 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-10 rounded-full">
             <div className="container mx-auto flex justify-between items-center px-4">
                 {/* Logo Section */}
                 <div className="flex items-center">
