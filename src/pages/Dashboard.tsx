@@ -8,8 +8,11 @@ export function Dashboard() {
     const [customers, setCustomers] = useContext(CustomerContext);
     return (
         <>
-            <h1>Dashboard</h1>
-            {customers.map((customer: Customer) => (<div key={customer.email}>{customer.name + ' '+ customer.email + ' '+ customer.phone }</div>))}
+            <header className="mt-8 mb-6">
+                <h1 className="text-6xl font-bold text-gray-100">Dashboard</h1>
+            </header>
+            {customers.map((customer: Customer) => (
+                <div key={customer.email}>{customer.name + ' ' + customer.email + ' ' + customer.phone}</div>))}
         </>
     );
 }
