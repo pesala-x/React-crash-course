@@ -20,13 +20,17 @@ export function AddCustomer() {
 
     return (
         <>
-            <header><h2>Add Customer</h2></header>
+            <header>
+                <h1>Add Customer</h1>
+            </header>
+
             <br/>
 
-            <input type="text" placeholder='name' onChange={(e) => setName(e.target.value)}/>
-            <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
-            <input type="text" placeholder='phone' onChange={(e) => setPhone(e.target.value)}/>
-
+            <div className="flex flex-col space-y-4 items-center ">
+                <input type="text" placeholder='name' onChange={(e) => setName(e.target.value)}/>
+                <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder='phone' onChange={(e) => setPhone(e.target.value)}/>
+            </div>
             <br/>
             <button onClick={handleSubmit}>Add Customer</button>
         </>
