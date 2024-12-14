@@ -6,6 +6,7 @@ import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
 import {Dashboard} from "./pages/Dashboard.tsx";
 import {Error} from "./components/Error.tsx";
 import {RootLayout} from "./components/RootLayout.tsx";
+import {CustomerProvider} from "./components/CustomerProvider.tsx";
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
             path: "/" ,
             element: <RootLayout/>,
             children: [
-                {index: true , element: <Dashboard/>},
+                {path: '', element: <Dashboard/>},
                 {path: "/add" , element: <AddCustomer/> },
                 {path: "/update" , element: <UpdateCustomer/> },
                 {path: "/delete" , element: <DeleteCustomer/> },
@@ -25,9 +26,9 @@ function App() {
 
     return (
         <>
-            <RouterProvider router={routs}>
-
-            </RouterProvider>
+            <CustomerProvider>
+                <RouterProvider router={routs}/>
+            </CustomerProvider>
         </>
     );
 }

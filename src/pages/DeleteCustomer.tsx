@@ -1,7 +1,8 @@
 
 export function DeleteCustomer() {
     return (
-        <> DeleteCustomer
+        <>
+            <h1> Delete Customer </h1>
          </>
     );
 }

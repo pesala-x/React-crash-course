@@ -1,7 +1,8 @@
 
 export function UpdateCustomer() {
     return (
-        <> UpdateCustomer
+        <>
+            <h1>UpdateCustomer</h1>
         </>
     );
 }
