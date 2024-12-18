@@ -1,25 +1,35 @@
 import './App.css';
-import {useReducer} from "react";
+import {useReducer, useState} from "react";
+import {nameReducer} from "./reducers/CounterReducer.ts";
 
-function countReducer(state: number, action:{type : string, payload : number}) {
-
-    switch (action.type) {
-        case 'INCREMENT':
-            return state + action.payload;
-        case 'DECREMENT':
-            return state - action.payload;
-        default:
-            return state;
-    }
-}
 function App() {
-    const [count,dispatch ] = useReducer(countReducer,0)
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [name, dispatch] = useReducer(nameReducer, { firstName: "", lastName: "" });
+
     return (
         <>
-            <h1>{count}</h1>
-            <button onClick={() => dispatch({type: "INCREMENT", payload: 1})}>Increment</button>
-            <button onClick={() => dispatch({type: "DECREMENT", payload: 1})}>Increment</button>
+            <input
+                type={"text"}
+                placeholder={"First Name"}
+                onChange={(e) => setFirstName(e.target.value)}
+            />
+            <input
+                className=''
+                type={"text"}
+                placeholder={"Last Name"}
+                onChange={(e) => setLastName(e.target.value)}
+            />
+            <br/>
+            <br/>
+            <button onClick={() => dispatch({type: 'PRINT', payload: {firstName, lastName}})}>
+                Print
+            </button>
+            <br/>
+            <p>First Name: {name.firstName}</p>
+            <p>Last Name: {name.lastName}</p>
         </>
+
     );
 }
 
