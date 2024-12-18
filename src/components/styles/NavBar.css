@@ -1,0 +1,3 @@
+.nav-links{
+ @apply text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20
+}

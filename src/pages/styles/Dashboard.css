@@ -1,0 +1,6 @@
+.table-header{
+   @apply border border-gray-700 px-4 py-2 text-center;
+}
+.table-row-body{
+    @apply border border-gray-700 px-4 py-2;
+}

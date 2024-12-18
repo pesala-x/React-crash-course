@@ -1,6 +1,7 @@
 import { CustomerContext } from "../components/CustomerProvider.tsx";
 import { useContext } from "react";
 import { Customer } from "../models/customer.ts";
+import "./styles/Dashboard.css"
 
 export function Dashboard() {
     // @ts-ignore
@@ -16,17 +17,17 @@ export function Dashboard() {
                 <table className="min-w-full table-auto border-collapse border border-gray-700 text-white">
                     <thead>
                         <tr className="bg-[#03001417] backdrop-blur-md">
-                            <th className="border border-gray-700 px-4 py-2 text-center">Name</th>
-                            <th className="border border-gray-700 px-4 py-2 text-center">Email</th>
-                            <th className="border border-gray-700 px-4 py-2 text-center">Phone</th>
+                            <th className="table-header">Name</th>
+                            <th className="table-header">Email</th>
+                            <th className="table-header">Phone</th>
                         </tr>
                     </thead>
                     <tbody>
                     {customers.map((customer: Customer, index: number) => (
                         <tr key={index} className="odd:bg-gray-700 even:bg-gray-600">
-                            <td className="border border-gray-700 px-4 py-2">{customer.name}</td>
-                            <td className="border border-gray-700 px-4 py-2">{customer.email}</td>
-                            <td className="border border-gray-700 px-4 py-2">{customer.phone}</td>
+                            <td className="table-row-body">{customer.name}</td>
+                            <td className="table-row-body">{customer.email}</td>
+                            <td className="table-row-body">{customer.phone}</td>
                         </tr>
                     ))}
                     </tbody>

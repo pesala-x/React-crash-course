@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { IoIosNotificationsOutline } from "react-icons/io";
-
+import "./styles/NavBar.css"
 export function Navigation() {
     return (
         <nav className="w-full text-white py-4 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-10 rounded-full">
@@ -19,25 +19,25 @@ export function Navigation() {
                 <div className="flex space-x-6">
                     <Link
                         to="/"
-                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="nav-links"
                     >
                         Dashboard
                     </Link>
                     <Link
                         to="/add"
-                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="nav-links"
                     >
                         Add Customer
                     </Link>
                     <Link
                         to="/update"
-                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="nav-links"
                     >
                         Update Customer
                     </Link>
                     <Link
                         to="/delete"
-                        className="text-purple-500 hover:text-white hover:shadow-xl hover:shadow-[#fff]/20"
+                        className="nav-links"
                     >
                         Delete Customer
                     </Link>
