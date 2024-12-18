@@ -1,34 +1,14 @@
 import './App.css';
-import {createBrowserRouter, RouterProvider} from "react-router";
-import {AddCustomer} from "./pages/AddCustomer.tsx";
-import {UpdateCustomer} from "./pages/UpdateCustomer.tsx";
-import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
-import {Dashboard} from "./pages/Dashboard.tsx";
-import {Error} from "./components/Error.tsx";
-import {RootLayout} from "./components/RootLayout.tsx";
-import {CustomerProvider} from "./components/CustomerProvider.tsx";
+import { useState } from "react";
 
 function App() {
-
-    const routs = createBrowserRouter([
-        {
-            path: "/" ,
-            element: <RootLayout/>,
-            children: [
-                {path: '', element: <Dashboard/>},
-                {path: "/add" , element: <AddCustomer/> },
-                {path: "/update" , element: <UpdateCustomer/> },
-                {path: "/delete" , element: <DeleteCustomer/> },
-            ]
-        },
-        {path: "*" , element: <Error/>}
-    ])
+    const [count, setCount] = useState(0); // Initialize count with 0
 
     return (
         <>
-            <CustomerProvider>
-                <RouterProvider router={routs}/>
-            </CustomerProvider>
+            <h1>{count}</h1>
+            <button onClick={() => setCount((count) + 1)}>Increment</button>
+            <button onClick={() => setCount((count) - 1)}>Decrement</button>
         </>
     );
 }
