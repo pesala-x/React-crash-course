@@ -1,34 +1,47 @@
 import './App.css';
 import {useReducer, useState} from "react";
-import {nameReducer} from "./reducers/CounterReducer.ts";
-
+import {Customer} from "./models/customer.ts";
+import {CustomerReducer} from "./reducers/CounterReducer.ts";
 function App() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [name, dispatch] = useReducer(nameReducer, { firstName: "", lastName: "" });
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [customer, dispatch] = useReducer(CustomerReducer,{ firstName: "", lastName: "" });
+
+    function addCustomer() {
+        const newCustomer = new Customer(name, email, phone);
+        dispatch({type : "ADD_CUSTOMER", payload: newCustomer});
+    }
 
     return (
         <>
             <input
                 type={"text"}
-                placeholder={"First Name"}
-                onChange={(e) => setFirstName(e.target.value)}
+                placeholder={"Name"}
+                onChange={(e) => setName(e.target.value)}
             />
             <input
-                className=''
                 type={"text"}
-                placeholder={"Last Name"}
-                onChange={(e) => setLastName(e.target.value)}
+                placeholder={"Email"}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+                type={"text"}
+                placeholder={"Phone"}
+                onChange={(e) => setPhone(e.target.value)}
             />
             <br/>
+            <button onClick={addCustomer}>
+                Add Customer
+            </button>
             <br/>
-            <button onClick={() => dispatch({type: 'PRINT_NAME', payload: {firstName, lastName}})}>Print</button>
-            <br/>
-            <p>First Name: {name.firstName}</p>
-            <p>Last Name: {name.lastName}</p>
-        </>
 
-    );
+            {customer.map(customer => (
+                <div>{customer.name + ' ' + customer.email + ' ' +customer.phone}</div>
+            ))}
+        </>
+    )
 }
 
-export default App;
+export default App

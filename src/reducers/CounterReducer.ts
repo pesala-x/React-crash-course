@@ -1,16 +1,11 @@
-const initialState = {
-    firstName: "John",
-    lastName: "Doe",
-};
+import {Customer} from "../models/customer.ts";
 
-export function nameReducer(state = initialState, action: { type: string, payload: {firstName: string, lastName: string}}) {
+export const initialState : Customer[] = [];
+
+export function CustomerReducer(state = initialState, action : {type: string, payload: Customer}) {
     switch (action.type) {
-        case 'PRINT_NAME':
-            return {
-                ...state,
-                firstName: action.payload.firstName,
-                lastName: action.payload.lastName,
-            };
+        case "ADD_CUSTOMER":
+            return [...state, action.payload];
         default:
             return state;
     }
