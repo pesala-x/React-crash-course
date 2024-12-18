@@ -22,9 +22,7 @@ function App() {
             />
             <br/>
             <br/>
-            <button onClick={() => dispatch({type: 'PRINT', payload: {firstName, lastName}})}>
-                Print
-            </button>
+            <button onClick={() => dispatch({type: 'PRINT_NAME', payload: {firstName, lastName}})}>Print</button>
             <br/>
             <p>First Name: {name.firstName}</p>
             <p>Last Name: {name.lastName}</p>

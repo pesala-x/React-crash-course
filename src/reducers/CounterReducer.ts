@@ -3,9 +3,9 @@ const initialState = {
     lastName: "Doe",
 };
 
-export function nameReducer(state = initialState, action: { type: string, payload: any }) {
+export function nameReducer(state = initialState, action: { type: string, payload: {firstName: string, lastName: string}}) {
     switch (action.type) {
-        case 'PRINT':
+        case 'PRINT_NAME':
             return {
                 ...state,
                 firstName: action.payload.firstName,
